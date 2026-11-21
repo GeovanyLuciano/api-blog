@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\AuthLoginRequest;
 use App\Http\Requests\V1\AuthRegisterRequest;
-use App\Http\Resources\V1\AuthResource;
 use App\Models\User;
+use App\Http\Resources\V1\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -27,7 +27,7 @@ class AuthenticationController extends Controller
 
         return response()->json([
             'message' => 'Conta criada com sucesso.',
-            'user' =>  new AuthResource($user),
+            'user' =>  new UserResource($user),
             'token' => $token,
             'token_type' => 'Bearer',
         ], 201);
@@ -55,7 +55,7 @@ class AuthenticationController extends Controller
 
         return response()->json([
             'message' => 'Login efetuado com sucesso.',
-            'user' => new AuthResource($user),
+            'user' => new UserResource($user),
             'token' => $token,
             'token_type' => 'Bearer',
         ]);
@@ -74,6 +74,6 @@ class AuthenticationController extends Controller
     // PERFIL DO UTILIZADOR
     public function profile(Request $request)
     {
-        return new AuthResource($request->user());
+        return new UserResource($request->user());
     }
 }
