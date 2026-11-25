@@ -23,7 +23,7 @@ class PostFactory extends Factory
             "image" => "public/uploads/image.jpg",
             "description" => fake()->text(),
             "user_id" => 1,
-            "categoria_id" => 3
+            "categoria_id" => 1
         ];
     }
 }

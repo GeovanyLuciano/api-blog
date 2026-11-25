@@ -10,10 +10,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Categoria::factory()
-        //     ->count(50)
-        //     ->create();
+        Categoria::factory()
+            ->count(5)
+            ->create();
 
-        Post::factory()->count(10)->create();
+        // Post::factory()->count(10)->create();
     }
 }

@@ -16,7 +16,7 @@ class CategoriaFactory extends Factory
             'name' => fake()->words(2, true),
             'slug' => fake()->unique()->slug(),
             'description' => fake()->paragraph(),
-            'user_id' => 11
+            'user_id' => 1
         ];
     }
 }

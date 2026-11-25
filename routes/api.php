@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\AuthenticationController;
 use App\Http\Controllers\Api\V1\CategoriaController;
+use App\Http\Controllers\Api\V1\ComentController;
 use App\Http\Controllers\Api\V1\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,7 @@ Route::middleware(["auth:sanctum"])->prefix("v1")->group(function () {
 
     // Comentarios
 
-    // Route::apiResource("comentarios");
+    Route::apiResource("comentarios",ComentController::class);
 
     // Users
     Route::get("/profile", [AuthenticationController::class, "profile"]);
